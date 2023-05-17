@@ -117,6 +117,14 @@ sitemap(config, (sitemap, urls) => {
 			console.log('%s blacklisted %d urls', sitemap.url, totalCount - urls.length);
 		}
 	}
+
+	urls = urls.map((url) => {
+		if (url.url.substr(-1) !== '/') {
+			url.url = url.url + '/'
+			return url
+		}
+		return url
+	})
 	
 	sitemapCount += urls.length;
 
