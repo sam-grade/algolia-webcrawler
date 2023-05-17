@@ -119,7 +119,7 @@ sitemap(config, (sitemap, urls) => {
 	}
 
 	urls = urls.map((url) => {
-		if (!url.endsWith('/')) {
+		if (url.substr(-1) !== '/') {
 			return url + '/'
 		}
 		return url
